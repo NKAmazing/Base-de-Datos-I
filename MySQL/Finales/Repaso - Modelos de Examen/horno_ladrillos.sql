@@ -105,7 +105,7 @@ SELECT
 	D.cantidad as 'Cantidad',
     P.precio as 'Precio',
     D.fecha as 'Fecha y Hora'
-FROM deposito D INNER JOIN producto P ON (D.id_ladrillo = P.id_ladrillo) WHERE D.fecha LIKE('%2022-07-06 12:15:28%');
+FROM deposito D INNER JOIN producto P ON (D.id_ladrillo = P.id_ladrillo) WHERE D.fecha LIKE('2022-07-06%');
 
 # Consulta 2
 SELECT
@@ -119,7 +119,7 @@ SELECT
 	D.cantidad as 'Cantidad',
     P.precio as 'Precio',
     D.fecha as 'Fecha y Hora'
-FROM deposito D INNER JOIN producto P ON (D.id_ladrillo = P.id_ladrillo) WHERE D.fecha LIKE('%2022-07-06 12:15:28%');
+FROM deposito D INNER JOIN producto P ON (D.id_ladrillo = P.id_ladrillo) WHERE D.fecha LIKE('2022-07-06%');
 
 SELECT * FROM VistaDeposito;
 
@@ -130,5 +130,11 @@ FROM pedido WHERE fecha_pedido LIKE('2022-07-06%');
 
 SELECT * FROM VistaPedidos;
 
-
+# Consulta de Stock disponible sin filtrar por fecha
+SELECT 
+	P.nombre as 'Nombre de producto',
+	D.cantidad as 'Cantidad',
+    P.precio as 'Precio',
+    D.fecha as 'Fecha y Hora'
+FROM deposito D INNER JOIN producto P ON (D.id_ladrillo = P.id_ladrillo);
 
